@@ -7,6 +7,9 @@ const pool = new Pool({
   database: 'bootcampx'
 });
 
+const cohort_name = process.argv[2];
+const values = [`${cohort_name}`];
+
 pool.query(`
 SELECT DISTINCT teachers.name as teacher, cohorts.name as cohort_id
 FROM teachers
